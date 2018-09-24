@@ -1,20 +1,17 @@
+const { mergeSchemas } = require('graphql-tools');
+const getSchema1 = require('./schema1');
+const getSchema2 = require('./schema2');
 
 
-import {
-  mergeSchemas,
-} from 'graphql-tools';
-import getSchema1 from './schema1';
-import getSchema2 from './schema2';
 
-
-export default async function createMerged() {
-  const schemaA = await getSchema1();
-  const schemaB = await getSchema2();
+module.exports = async function createMerged() {
+  const test = await getSchema1();
+  const apple = await getSchema2();
 
   return mergeSchemas({
     schemas: [
-      schemaA,
-      schemaB,
+      test,
+      apple,
     ],
   });
 

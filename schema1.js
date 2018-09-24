@@ -1,13 +1,13 @@
 
-import { HttpLink } from 'apollo-link-http';
-import fetch from 'node-fetch';
-import { introspectSchema, makeRemoteExecutableSchema } from 'graphql-tools';
+const { HttpLink } = require('apollo-link-http');
+const fetch = require('node-fetch');
+const { introspectSchema, makeRemoteExecutableSchema } = require('graphql-tools');
 
 
 const link = new HttpLink({ uri: 'https://i6f88qeedf.execute-api.us-east-1.amazonaws.com/dev/graphql', fetch });
-//?
 
-export default async () => {
+
+module.exports = async () => {
     const schema = await introspectSchema(link);
 
     const executableSchema = makeRemoteExecutableSchema({
@@ -19,13 +19,3 @@ export default async () => {
 };
 
 
-// introspectSchema(link)
-//     .then(res => {
-//         res.getQueryType() //?
-//         const schema = res;
-//        const remoteSchema = makeRemoteExecutableSchema({
-//             schema,
-//             link,
-//         })
-//         remoteSchema //?
-//     })
