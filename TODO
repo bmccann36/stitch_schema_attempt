@@ -1,0 +1,9 @@
+
+
+make mock data stores and actually return values dynamically based on resolver input
+
+implement newer version of apollo lambda 
+
+look into auth and auth forwarding with schema stitching 
+
+see if other libs can be updated 

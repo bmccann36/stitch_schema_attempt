@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const { introspectSchema, makeRemoteExecutableSchema } = require('graphql-tools');
 
 
-const link = new HttpLink({ uri: 'https://i6f88qeedf.execute-api.us-east-1.amazonaws.com/dev/graphql', fetch });
+const link = new HttpLink({ uri: 'https://0fkyvz70f4.execute-api.us-east-1.amazonaws.com/dev/graphql', fetch });
 
 
 module.exports = async () => {
